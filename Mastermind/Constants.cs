@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mastermind
 {
+    /// <summary>
+    /// Constants used in the main program
+    /// </summary>
     internal static class Constants
     {
         public static short AnswerLength = 4;
@@ -16,6 +19,6 @@ namespace Mastermind
         public static string CorrectDigitWrongPosition = "-";
         public static string CorrectDigitCorrectPosition = "+";
 
-        //todo: strings for messages to user
+        //todo: strings for messages to the user (i.e. "You won", etc)
     }
 }

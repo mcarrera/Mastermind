@@ -12,7 +12,7 @@ namespace Mastermind
         {
             var answer = GenerateAnswer();
             // uncomment when debugging
-            //Console.WriteLine("[{0}]", string.Join(", ", answer));
+            // Console.WriteLine("[{0}]", string.Join(", ", answer));
 
             var attempts = 0;
 
@@ -44,9 +44,8 @@ namespace Mastermind
             Console.WriteLine("Sorry, you have lost.");
             Console.WriteLine("The correct answer was [{0}]", string.Join(", ", answer));
             Console.Read();
-            
         }
-        
+
         /// <summary>
         /// Verify the input is of the expected length and each digit is within the expected range
         /// </summary>
@@ -80,14 +79,14 @@ namespace Mastermind
                 {
                     result.Append(Constants.CorrectDigitWrongPosition);
                 }
-                  
+
             }
 
             return new GuessResult
             {
                 Result = result.ToString(),
                 IsSuccess = result.Length == Constants.AnswerLength &&
-                            !result.ToString().Contains(Constants.CorrectDigitWrongPosition) 
+                            !result.ToString().Contains(Constants.CorrectDigitWrongPosition)
             };
         }
 
