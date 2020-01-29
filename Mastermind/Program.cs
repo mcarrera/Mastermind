@@ -10,7 +10,6 @@ namespace Mastermind
     {
         static void Main(string[] args)
         {
-
             var answer = GenerateAnswer();
             Console.WriteLine("[{0}]", string.Join(", ", answer));
             var attempts = 0;
@@ -37,7 +36,7 @@ namespace Mastermind
                 }
                 else
                 {
-                    // input error
+                    Console.WriteLine("Wrong input. Invalid attempt.");
                 }
             }
             Console.WriteLine("Sorry, you have lost.");
@@ -83,7 +82,7 @@ namespace Mastermind
             {
                 Result = result.ToString(),
                 IsSuccess = result.Length == Constants.AnswerLength &&
-                            !result.ToString().Contains(Constants.CorrectDigitWrongPosition)
+                            !result.ToString().Contains(Constants.CorrectDigitWrongPosition) 
             };
         }
 
@@ -96,7 +95,6 @@ namespace Mastermind
             {
                 answer[i] = GenerateRandomNumber(random);
             }
-
             return answer;
         }
 
