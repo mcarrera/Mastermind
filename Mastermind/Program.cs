@@ -42,6 +42,7 @@ namespace Mastermind
                 }
             }
             Console.WriteLine("Sorry, you have lost.");
+            Console.WriteLine("The correct answer was [{0}]", string.Join(", ", answer));
             Console.Read();
             
         }
