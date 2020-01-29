@@ -11,7 +11,9 @@ namespace Mastermind
         static void Main(string[] args)
         {
             var answer = GenerateAnswer();
-            Console.WriteLine("[{0}]", string.Join(", ", answer));
+            // uncomment when debugging
+            //Console.WriteLine("[{0}]", string.Join(", ", answer));
+
             var attempts = 0;
 
             while (attempts < Constants.MaxAttempts)
@@ -44,7 +46,6 @@ namespace Mastermind
             
         }
         
-
         /// <summary>
         /// Verify the input is of the expected length and each digit is within the expected range
         /// </summary>
@@ -75,7 +76,10 @@ namespace Mastermind
                 if (answer[i] == short.Parse(guess[i].ToString()))
                     result.Append(Constants.CorrectDigitCorrectPosition);
                 else if (answer.Contains(short.Parse(guess[i].ToString())))
+                {
                     result.Append(Constants.CorrectDigitWrongPosition);
+                }
+                  
             }
 
             return new GuessResult
